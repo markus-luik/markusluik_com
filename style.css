@@ -1,0 +1,421 @@
+/* GLOBAL STUFF */
+    body{
+        font-family: "Roboto Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+    }
+        .nightMode{
+            background-color: black;
+            color: white;
+        }
+    /* Text sizes */
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    h4{
+        font-size: 1.25rem;
+    }
+        p, figcaption{
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+        p{
+            /* text-align: justify; */
+            text-wrap: pretty;
+            /* hyphens: auto; */
+        }
+    h5{
+        font-size: 1rem;
+    }
+    /* special text */
+    .transparent{
+        opacity: 0.5;
+    }
+    /* horizontal lines for mobile */
+    .mobileHorizontal{ 
+        display: none;
+        border-top: 1.5px solid black;
+        opacity: 1;
+    }
+        .nightMode .mobileHorizontal{
+            border-top: 1.5px solid white;
+        }
+
+    /* Lists */
+    ul{
+        /* stripping list styles */
+        list-style: none;
+        padding: 0;
+        width: fit-content;
+    }
+
+    /* Links */
+    a{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        /* Quite laggy */
+        transition: all 0.5s ease; 
+    }
+    a.currentPage{
+        text-decoration: line-through;
+    }
+    a:hover{
+        font-weight: 900;
+        opacity: 1;
+        /* transition: font-weight 0.5s ease; */
+    }
+    a:active{
+        text-decoration: line-through;
+    }
+    a:visited{
+        color: black;
+    }
+        .nightMode a{
+            color: white;
+        }
+
+    /* images */
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* back to top link */
+    #backToTop{
+        text-align: right;
+    }
+    #backToTop{
+        margin-top: 2rem;
+        padding-bottom: 10rem;
+    }
+
+    /* Responsiveness */
+    /* tablet & phone */
+    @media (max-width:768px){ 
+        h1{
+            font-size: 2.25rem;
+        }
+        h2{
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
+        h4{
+            font-size: 1rem;
+        }
+            p, figcaption{
+                font-size: 1rem;
+            }
+        h5{
+            font-size: 1rem;
+        }
+    }
+    @media (max-width:426px){
+        .mobileHorizontal{
+            display: block;
+        }
+        #backToTop{
+             margin-top: 0rem;
+            padding-bottom: 0rem;
+        }
+    }
+
+
+/* HEADER */
+header{
+    /* positioning */
+    position: fixed;
+    top: 2.5rem;
+    left: 3rem;
+    z-index: 900;
+    /* visuals */
+    color: black;
+    width: fit-content;
+    height: fit-content;   
+}
+
+header a.backToMain:hover, header a.backToMain:active{
+    font-weight: 900;
+    text-decoration: none;
+}
+nav{
+    padding-top: 2rem;
+    width: fit-content;
+}
+    /* phone */
+    @media (max-width:426px){ 
+        header{
+            width: 85%;
+            position: relative;
+            left: 7.5%;
+        }
+        nav{
+        padding-top: 0rem;
+        }
+    }
+
+/* MAIN */
+#rightContentStream{
+    width: 65%;
+    position: relative;
+    left: 30%;
+    top: 10rem;
+}
+     /* tablet */
+    @media (min-width:427px) and (max-width:768px){ 
+        #rightContentStream{
+            width: 60%;
+            left: 35%;
+            top:9.5rem;
+        }
+    }
+    /* phone */
+    @media (max-width:426px){ 
+         #rightContentStream{
+            width: 85%;
+            left: 7.5%;
+            top: 3rem;
+        }
+    }
+
+/* Work */
+.workGallery{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* How WIDE each cell is */ /* fr-fractional repeat - evenly divides layout */
+    grid-template-rows: auto; 
+    column-gap: 2rem;
+    width: 100%;
+    height: auto;
+}
+.workPreview{
+    display: block;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    /* margin: 2.5% */
+    transition: opacity 0.3s ease;
+}
+        .workPreview:hover{
+            opacity: 0.5;
+        }
+    .workPreviewImage{
+        height: 20vh;
+    }
+    .workPreviewCaption{
+        height: auto;
+        padding: 0.5rem;
+    }
+     /* tablet */
+    @media (max-width:768px){ 
+        .workGallery{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    /* phone */
+    @media (max-width:426px){ 
+        .workPreviewImage{
+            height: 10vh;
+        }
+    }
+    
+
+/* PROJECTS */
+.projectBanner{
+    max-height: 25rem;
+}
+.projectDescription{
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* How WIDE each cell is */ /* fr-fractional repeat - evenly divides layout */
+    grid-template-rows: auto; 
+    column-gap: 2rem;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 0rem 0.5rem 0rem;
+}
+    .projectDescriptionText h4{
+        font-weight: 500;
+    }
+    .projectDescriptionGallery{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* How WIDE each cell is */ /* fr-fractional repeat - evenly divides layout */
+        grid-template-rows: auto; 
+        row-gap: 2rem;
+        width: 100%;
+        height: auto;
+    }
+        .projectDescriptionGallery img{
+            width: 100%;
+            height: auto;
+        }
+.projectDetails{
+    padding-top: 1rem;
+}
+    .projectDetailsGallery3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* How WIDE each cell is */ /* fr-fractional repeat - evenly divides layout */
+        grid-template-rows: auto; 
+        column-gap: 1rem;
+        width: 100%;
+        height: auto;
+        padding: 0rem 0rem 1rem 0rem;
+    }
+    .projectDetailsText{
+        padding: 0rem 0rem 1.5rem 0rem;
+        column-count: 2;
+        column-gap: 1.5rem;
+    }
+    .projectDetailsGallery2{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* How WIDE each cell is */ /* fr-fractional repeat - evenly divides layout */
+        grid-template-rows: auto; 
+        column-gap: 1rem;
+        width: 100%;
+        height: auto;
+        padding: 0rem 0rem 1rem 0rem;
+    }
+.projectLinksList li h4{
+    padding: 0.25rem 0rem 0.5rem 0rem;
+    margin: 0;
+    text-decoration: underline;
+}
+    /* tablet & phone */
+    @media (max-width:768px){ 
+        .projectDescription{
+            grid-template-columns: 1fr;
+        }
+    }
+    /* tablet & phone */
+    @media (max-width:426px){ 
+        .projectDetailsText{
+            column-count: 1;
+            padding: 0;
+        }
+        .projectDetailsGallery3, .projectDetailsGallery2{
+            grid-template-columns: 1fr;
+        }
+        .projectDescriptionGallery, .projectDetailsGallery3, .projectDetailsGallery2{
+            row-gap: 0.5rem;
+        }
+        /* Hides the biggest gallery */
+        .projectDetailsGallery3{
+            display: none;
+        }
+    }
+
+
+/* ABOUT */
+.aboutContainer{
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: auto; 
+    column-gap: 1rem;
+    width: 100%;
+    height: auto;
+}
+    .aboutImage img{
+        width: 100%;
+        height: auto;
+    }
+    /* tablet & phone */
+    @media (max-width:768px){ 
+        .aboutContainer{
+            grid-template-columns: 1fr;
+        }
+    }
+
+/* CV */
+#cvEmbed{
+    width: 100%;
+    height: 1000px;
+}
+    /* tablet & phone */
+    @media (max-width:768px){ 
+        #cvEmbed{
+            width: 100%;
+            height: 800px;
+        }
+    }
+    /* tablet & phone */
+    @media (max-width:426px){ 
+        #cvEmbed{
+            width: 100%;
+            height: 600px;
+        }
+    }
+
+/* Contact */
+#contactForm input, #contactForm textarea{
+    margin: 0.5rem 0rem 1rem 0rem;
+    height: fit-content;
+}
+#contactForm textarea{
+    width: 100%;
+}
+#contactForm #inputSubject{
+    width: 50%;
+}
+    /* tablet */
+    @media (max-width:768px){ 
+        #contactForm input, #contactForm textarea, #contactForm #inputSubject{
+            width: 100%;
+        }
+    }
+
+/* FOOTER */
+footer{
+    /* positioning */
+    position: fixed;
+    bottom: 2.5rem;
+    left: 3rem;
+    z-index: 800;
+    /* visuals */
+    font-weight:100;
+}
+footer a{
+    text-decoration: underline;
+}
+footer a:active{
+    text-decoration: line-through underline;
+}
+    /* phone */
+    @media (max-width:426px){ 
+        footer{
+            position: relative;
+            width: 85%;
+            left: 7.5%;
+            top: 4.5rem;
+            padding-bottom: 3rem;
+        }
+        
+    }
+#nightModeButton{
+    padding: 0.2rem;
+    margin: 0.2rem 0rem 0.8rem -0.2rem;
+    background-color: none;
+    background: none;
+    border: 0;
+    font-style: italic;
+    color: black;
+    transition: 0.3s all ease;
+}
+#nightModeButton:hover{
+    background-color: gainsboro;
+}
+.nightMode #nightModeButton{
+    color: white;
+}
+.nightMode #nightModeButton:hover{
+    background-color: gray;
+}
