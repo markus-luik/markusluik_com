@@ -2,10 +2,10 @@
     body{
         font-family: "Roboto Mono", monospace;
         font-optical-sizing: auto;
-        font-weight: 100;
+        font-weight: 400;
         font-style: normal;
     }
-        .nightMode{
+        .darkMode{
             background-color: black;
             color: white;
         }
@@ -45,7 +45,7 @@
         border-top: 1.5px solid black;
         opacity: 1;
     }
-        .nightMode .mobileHorizontal{
+        .darkMode .mobileHorizontal{
             border-top: 1.5px solid white;
         }
 
@@ -79,7 +79,7 @@
     a:visited{
         color: black;
     }
-        .nightMode a{
+        .darkMode a{
             color: white;
         }
 
@@ -356,9 +356,19 @@ nav{
     }
 
 /* Contact */
+#conactForm{
+   font-size: 20px;
+}
+
 #contactForm input, #contactForm textarea{
+    font-family: "Roboto Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
     margin: 0.5rem 0rem 1rem 0rem;
     height: fit-content;
+    font-size: 15px;
+    padding: 8px;
 }
 #contactForm textarea{
     width: 100%;
@@ -366,6 +376,19 @@ nav{
 #contactForm #inputSubject{
     width: 50%;
 }
+#contactForm #inputSend:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+#contactForm #inputSend:active{
+    cursor: pointer;
+    opacity: 0.25;
+}
+    .darkMode #contactForm textarea, .darkMode #contactForm input {
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+    }
     /* tablet */
     @media (max-width:768px){ 
         #contactForm input, #contactForm textarea, #contactForm #inputSubject{
@@ -400,22 +423,27 @@ footer a:active{
         }
         
     }
-#nightModeButton{
+#darkModeButton{
+    font-family: "Roboto Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
     padding: 0.2rem;
-    margin: 0.2rem 0rem 0.8rem -0.2rem;
+    margin: 0.2rem 0rem 1rem -0.2rem;
     background-color: none;
     background: none;
     border: 0;
     font-style: italic;
     color: black;
     transition: 0.3s all ease;
+    font-size: 1rem;
 }
-#nightModeButton:hover{
+#darkModeButton:hover{
     background-color: gainsboro;
 }
-.nightMode #nightModeButton{
+.darkMode #darkModeButton{
     color: white;
 }
-.nightMode #nightModeButton:hover{
+.darkMode #darkModeButton:hover{
     background-color: gray;
 }

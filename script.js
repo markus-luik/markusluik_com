@@ -1,25 +1,48 @@
-let nightModeButton = $('#nightModeButton')
-let body = $('body')
-let nightModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+$(document).ready(function() {
+    let darkModeButton = $('#darkModeButton');
+    let body = $('body');
+    let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-function nightModeToggle() {
-    body.toggleClass('nightMode');
-    if (body.hasClass('nightMode')){
-        nightModeButton.text("Light Mode");
-    }else{
-        nightModeButton.text("Dark Mode");
+    // Check for saved preference in localStorage
+    let savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
+        body.addClass('darkMode');
+        darkModeButton.text("Light Mode");
+    } else if (savedMode === 'false') {
+        body.removeClass('darkMode');
+        darkModeButton.text("Dark Mode");
+    } else {
+        // No saved preference, check system preference
+        if (darkModeMediaQuery.matches) {
+            body.addClass('darkMode');
+            darkModeButton.text("Light Mode");
+        } else {
+            body.removeClass('darkMode');
+            darkModeButton.text("Dark Mode");
+        }
     }
-    console.log("Night mode toggled");
-}
 
-if (nightModeMediaQuery.matches){
-    nightModeToggle();
-}
+    // Toggle dark mode on button click
+    darkModeButton.click(function() {
+        if (body.hasClass('darkMode')) {
+            body.removeClass('darkMode');
+            darkModeButton.text("Dark Mode");
+            localStorage.setItem('darkMode', 'false');
+        } else {
+            body.addClass('darkMode');
+            darkModeButton.text("Light Mode");
+            localStorage.setItem('darkMode', 'true');
+        }
+    });
 
-nightModeButton.click(function(){
-    nightModeToggle();
-});
-
-nightModeMediaQuery.addEventListener('change', (e) => {
-    nightModeToggle();
+    // Listen for system preference changes
+    darkModeMediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+            body.addClass('darkMode');
+            darkModeButton.text("Light Mode");
+        } else {
+            body.removeClass('darkMode');
+            darkModeButton.text("Dark Mode");
+        }
+    });
 });
