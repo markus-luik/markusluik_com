@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // DARK MODE
     let darkModeButton = $('#darkModeButton');
     let body = $('body');
     let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -45,4 +46,8 @@ $(document).ready(function() {
             darkModeButton.text("Dark Mode");
         }
     });
+
+    // CURRENT YEAR
+    let currentYear = new Date().getFullYear();
+    $('#currentYear').text(currentYear);
 });

@@ -65,13 +65,11 @@
         /* Quite laggy */
         transition: all 0.5s ease; 
     }
-    a.currentPage{
-        text-decoration: line-through;
-    }
     a:hover{
         font-weight: 900;
         opacity: 1;
         /* transition: font-weight 0.5s ease; */
+        text-decoration: none;
     }
     a:active{
         text-decoration: line-through;
@@ -82,7 +80,9 @@
         .darkMode a{
             color: white;
         }
-
+    a.currentPage{
+        text-decoration: line-through;
+    }
     /* images */
     img{
         width: 100%;
@@ -122,7 +122,7 @@
             font-size: 1rem;
         }
     }
-    @media (max-width:426px){
+    @media (max-width:520px){
         .mobileHorizontal{
             display: block;
         }
@@ -131,6 +131,7 @@
             padding-bottom: 0rem;
         }
     }
+
 
 
 /* HEADER */
@@ -154,8 +155,31 @@ nav{
     padding-top: 2rem;
     width: fit-content;
 }
+.work-list-heading{
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 1rem;
+}
+.work-list{
+    max-width: 350px;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+.work-list a{
+    text-decoration: none;
+}
+    .work-list a.currentPage{
+        text-decoration: line-through;
+    }
+.work-list a:hover{
+    font-weight: 900;
+    text-decoration: none;
+}
+#work-nav h2{
+    margin-bottom:1rem;
+}
     /* phone */
-    @media (max-width:426px){ 
+    @media (max-width:520px){ 
         header{
             width: 85%;
             position: relative;
@@ -165,6 +189,18 @@ nav{
         padding-top: 0rem;
         }
     }
+    /* RESIZING NAV FOR SMALLER SCREENS */
+    @media (min-width:876px) and (max-width:1416px){ 
+        nav{
+            max-width: 200px;
+        }
+    }
+    @media (min-width:520px) and (max-width:875px){ 
+        nav{
+            max-width: 100px;
+        }
+    }
+
 
 /* MAIN */
 #rightContentStream{
@@ -174,7 +210,7 @@ nav{
     top: 10rem;
 }
      /* tablet */
-    @media (min-width:427px) and (max-width:768px){ 
+    @media (min-width:521px) and (max-width:768px){ 
         #rightContentStream{
             width: 60%;
             left: 35%;
@@ -182,7 +218,7 @@ nav{
         }
     }
     /* phone */
-    @media (max-width:426px){ 
+    @media (max-width:520px){ 
          #rightContentStream{
             width: 85%;
             left: 7.5%;
@@ -224,7 +260,7 @@ nav{
         }
     }
     /* phone */
-    @media (max-width:426px){ 
+    @media (max-width:520px){ 
         .workPreviewImage{
             height: 10vh;
         }
@@ -297,7 +333,7 @@ nav{
         }
     }
     /* tablet & phone */
-    @media (max-width:426px){ 
+    @media (max-width:520px){ 
         .projectDetailsText{
             column-count: 1;
             padding: 0;
@@ -348,7 +384,7 @@ nav{
         }
     }
     /* tablet & phone */
-    @media (max-width:426px){ 
+    @media (max-width:520px){ 
         #cvEmbed{
             width: 100%;
             height: 600px;
@@ -413,7 +449,7 @@ footer a:active{
     text-decoration: line-through underline;
 }
     /* phone */
-    @media (max-width:426px){ 
+    @media (max-width:520px){ 
         footer{
             position: relative;
             width: 85%;
