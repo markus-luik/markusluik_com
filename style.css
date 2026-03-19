@@ -155,29 +155,36 @@ nav{
     padding-top: 2rem;
     width: fit-content;
 }
-.work-list-heading{
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 1rem;
-}
 .work-list{
     max-width: 350px;
     list-style: none;
     margin-bottom: 2rem;
+    opacity: 80%;
+}
+.work-list-heading{
+    font-weight: 300;
+    /* font-style: italic; */
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
 }
 .work-list a{
     text-decoration: none;
+    font-weight: 200;
 }
     .work-list a.currentPage{
         text-decoration: line-through;
     }
 .work-list a:hover{
     font-weight: 900;
-    text-decoration: none;
+    /* text-decoration: none; */
+    opacity: 100%;
 }
 #work-nav h2{
     margin-bottom:1rem;
 }
+    #work-nav h2.currentPage{
+        margin-bottom: 0.75rem;
+    }
     /* phone */
     @media (max-width:520px){ 
         header{
