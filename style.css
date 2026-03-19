@@ -9,6 +9,18 @@
             background-color: black;
             color: white;
         }
+        .darkMode h1,
+        .darkMode h2,
+        .darkMode h3,
+        .darkMode h4,
+        .darkMode h5,
+        .darkMode h6,
+        .darkMode a,
+        .darkMode a:visited,
+        .darkMode a:hover,
+        .darkMode a:active {
+            color: white;
+        }
     /* Text sizes */
     h1{
         font-size: 3rem;
@@ -162,14 +174,14 @@ nav{
     opacity: 80%;
 }
 .work-list-heading{
-    font-weight: 300;
+    font-weight: 450;
     /* font-style: italic; */
     margin-top: 0.75rem;
     margin-bottom: 0.25rem;
 }
 .work-list a{
     text-decoration: none;
-    font-weight: 200;
+    font-weight: 400;
 }
     .work-list a.currentPage{
         text-decoration: line-through;
